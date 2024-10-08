@@ -1,0 +1,31 @@
+<!-- callback function -->
+function greet(name,callback){
+    console.log("Hello "+name);
+    callback();
+}
+function sayByee(){
+    console.log("Good Bye");
+}
+greet("Devi",sayByee);
+
+#output
+Hello Devi 
+Good Bye 
+
+<!-- Event loop with setTimeout -->
+console.log("start");
+setTimeout(()=>{
+    console.log("Hello Everyone");
+},2000);
+console.log("End");
+
+<!-- Event loop with multiple setTimeout -->
+console.log("start");
+setTimeout(()=>{
+    console.log("Hello Devi");
+},2000);
+
+setTimeout(()=>{
+    console.log("Hello Sri");
+},2000);
+console.log("End");

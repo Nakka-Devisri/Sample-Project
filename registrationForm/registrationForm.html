@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <style>
+    body {
+      background: linear-gradient(to left bottom, pink, yellow);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      background-color: white;
+      width: 550px;
+      height: 355px;
+      position: relative;
+      padding: 30px;
+      margin: 0px;
+      align-items: center;
+    }
+    .row {
+      display: flex;
+    }
+
+    .column{
+
+      padding: 10px;
+      height: 300px;
+      width: 300px;
+      margin-top: 1px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+   
+    <h1 onclick="headingElement(this)">Registration Form</h1>
+    <form action="success.html" onsubmit="myFunction(this)">
+    <div class="row">
+      <div class="column">
+        
+        <input type="text" onchange="myFunction(this)" id="fname" placeholder="First Name" required/>
+        <label for="fname"></label>
+        <br><br>
+        <input type="date" onchange="myFunction(this)" id="birthday" min="1990-01-01" max="2023-01-01" value="Birthday" required/>
+        <label for="birthday"></label>
+        <br><br><br><br>
+        <input type="text" onchange="myFunction(this)" id="email" placeholder="Email" required/>
+        <br><br>
+        <label for="subject">Subject</label><br><br>
+        <select name="subject" onchange="myFunction(this)" id="sub" style="width:500px;height:25px">
+          <option value="choose">Choose option</option>
+          <option value="Maths">Maths</option>
+          <option value="English">English</option>
+          <option value="Science">Science</option>
+          <option value="Telugu">Telugu</option>
+        </select><br><br>
+        <input type="submit" value="Submit" onsubmit="submitHandler()" style="background-color: orange ;color:white;padding:10px;font-size: 15px; font-style:bold;border:none;border-radius:5px;">
+        
+      </div>
+      <div class="column">
+        <input type="text" onchange="myFunction(this)" id="lname" placeholder="Last Name" required/>
+        <label for="lname"></label>
+        <br><br>
+        <label>Gender:</label><br><br>
+        <input type="radio" value="female" onchange="myFunction(this)" id="female" name="gender"></input>
+        <label for="female">Female</label>
+        <input type="radio" value="male" onchange="myFunction(this)" id="male" name="gender"></input>
+        <label for="male">Male</label>
+        <input type="radio" value="other" onchange="myFunction(this)" id="other" name="gender"></input>
+        <label for="other">Other</label>
+        <br><br>
+        <input type="tel" maxlength="10" minlength="10" onchange="myFunction(this)" id="num" placeholder="Phone Number">
+      </div>
+    </div>
+  </div>
+</form>
+  <script>
+    function myFunction(event){
+      if(!validateNumber(event)){
+          alert("Provide valid Phone Number");
+        }
+      if(event.id=="fname" && !validateNames(event)){
+        alert("First name should be more than 3 characters, less than 20 characters and should not contain numbers");
+      }
+      if(event.id=="lname" && !validateNames(event)){
+        alert("Last name should be more than 3 characters, less than 20 characters and should not contain numbers");
+      }
+      if(event.id=="email" && !validateEmail(event)){
+        alert("Provide a proper email");
+      }
+      console.log(this);
+      console.log("myFunction is invoke", event);
+      console.log(event.value, event.id);
+      console.log(typeof(event.value));
+
+    }
+    function submitHandler(){
+     alert("click okay");
+    }
+    function validateNumber(event){
+      if(event.id=="num" && (event.value.length!=10 || event.value.match(/[a-zA-Z]/))) return false;
+      return true;
+        
+    }
+    function validateNames(event){
+      if( (event.value.length<3 || event.value.length>20)|| event.value.match(/[0-9]/)) return false;
+      return true;
+    }
+    function validateEmail(event){
+      if( event.value.match(/^[^\s@]+@[^\s@]+\.[a-zA-Z]{3}$/))
+    return true;
+      return false;
+    }
+    function headingElement(event){
+      alert("This is registration form!!");
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!-- Function Declaration -->
+function multiply(a,b){
+    return a*b;
+}
+const res=add(2,3);
+console.log(res);
+
+#output:6
+
+<!-- Function Expression -->
+const add=function(a,b){
+    return a+b;
+};
+const res=add(2,3);
+console.log(res);
+
+#output:5
+
+<!-- Arrow function -->
+const add=(a,b)=>{
+    return a+b;
+};
+const res=add(3,4);
+console.log(res);
+
+<!-- Immediately invoke function -->
+(function(a,b){
+    const res=a+b;
+    console.log(res);
+})(2,3);
+
+
+<!-- Function with default parameters -->
+function myFunction(name,message="Hello"){
+    return '${message},$(name)'; 
+}
+const var1=myFunction("Devi");
+const var2=myFunction("Sarah","Gud mrng");
+Console.log(var1);
+console.log(var2);
+
+#output:Hello Devi  
+        Gud mrng Sarah
+
+<!-- Function with Rest Parameters -->
+function add(...args){
+    return args.reduce((sum,current)=>sum+current,0);
+}
+let res=add(1,2,3,4);
+console.log(res);
+
+#output:10

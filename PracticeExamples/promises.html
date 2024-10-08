@@ -1,0 +1,72 @@
+function fun1(){
+    let a=new Promise((resolve,reject)=>{
+        let success=True;
+        if(success){
+            resolve("Operation is successful");
+        }
+        else{
+            reject("Operation is unsuccessful");
+        }
+    });
+    a.then(message=>{
+        console.log(message);
+    });
+    console.log("End");
+}
+fun1();
+
+output:
+End 
+Operation is successful
+  
+<!--Using reject -->
+function fun1(){
+    console.log("Start");
+    let a=new Promise((resolve,reject)=>{
+        
+            reject("Operation is unsuccessful");  
+    });
+    a.then(message=>{
+        console.log(message);
+    });
+    a.catch(error=>{
+        console.error(error);
+    });
+    a.finally(()=>{
+        console.log("Operation is done");
+    });
+    console.log("End");
+}
+fun1();
+Output:Start
+       End
+       Operation is unsuccessful
+       Operation is done
+
+<!--using resolve-->
+function fun1(){
+    console.log("Start");
+    let a=new Promise((resolve,reject)=>{
+        
+            resolve("Operation is successful");
+       
+        
+    });
+    a.then(message=>{
+        console.log(message);
+    });
+    a.catch(error=>{
+        console.error(error);
+    });
+    a.finally(()=>{
+        console.log("Operation is done");
+    });
+    console.log("End");
+}
+fun1();
+
+Output:
+Start
+End
+Operation is successful
+Operation is done

@@ -1,0 +1,84 @@
+<!-- Array Methods -->
+#push 
+let names=["Devi","Sri"];
+console.log(names.push("yajiv"));
+console.log(names);
+
+Output:
+3
+["Devi","Sri","yajiv"]
+
+#pop
+let names=["Devi","Sri","yajiv"];
+console.log(names.pop());
+console.log(names);
+Output:
+yajiv
+["Devi","Sri"]
+
+#shift
+let names=["Devi","Sri","yajiv"];
+console.log(names.shift());
+console.log(names);
+Output:
+Devi
+["Sri","yajiv"] 
+
+#unshift
+let names=["Devi","Sri"];
+console.log(names.unshift("yajiv"));
+console.log(names);
+output:
+3
+['yajiv', 'Devi', 'Sri']
+
+#concat
+let fruits=["papaya","apple","kiwi"];
+let vegetables=["ladiesfinger","tomato","brinjal"];
+console.log(fruits.concat(vegetables));
+output:
+['papaya', 'apple', 'kiwi', 'ladiesfinger', 'tomato', 'brinjal']
+
+#slice - returns shallow copy of a portion of an Array
+const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+const citrus = fruits.slice(2,4);
+console.log(citrus);
+
+output:
+Lemon,Apple
+
+#splice-add new items into an Array and the original array get changed
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruits);
+
+const removedOne=fruits.splice(2, 1, "Lemon", "Kiwi");
+console.log(fruits);
+console.log(removedOne);
+
+output:
+['Banana', 'Orange', 'Apple', 'Mango']
+['Banana', 'Orange', 'Lemon', 'Kiwi', 'Mango']
+ ['Apple']
+
+ #toSpliced()- add new items but the original array is unchanged
+ const months = ["Jan", "Feb", "Mar", "Apr"];
+const spliced = months.splice(0, 1);
+console.log(months);
+console.log(spliced);
+
+output:
+['Jan', 'Feb', 'Mar', 'Apr']
+['Feb', 'Mar', 'Apr']
+
+#forEach()
+function fun1(a){
+    res=res+a;
+}
+ let res=0;
+let arr=[1,2,3,4,5];
+    arr.forEach(fun1)
+    console.log(res);
+
+output:15
+
+

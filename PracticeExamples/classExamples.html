@@ -1,0 +1,64 @@
+<!-- public class -->
+class Car{
+    constructor(brand,model){
+        this.brand=brand;
+        this.model=model;
+    }
+    drive(){
+        console.log('Driving a',this.brand,',', this.model);
+    }
+}
+const myCar=new Car("Toyota","Corolla");
+console.log(myCar.brand);
+myCar.drive();
+
+#output: Toyota
+          Driving a Toyota Corolla
+
+<!-- private class -->
+class Car{
+    #brand;
+    #model;
+    constructor(brand,model){
+        this.#brand=brand;
+        this.#model=model;
+    }
+    drive(){
+        console.log('Driving a',this.#brand,',', this.#model);
+    }
+}
+const myCar=new Car("Toyota","Corolla");
+console.log(myCar.#brand);
+myCar.drive();
+
+output:
+Toyota
+Driving a Toyota , Corolla
+
+<!-- using Extends keyword  -->
+class Animal{
+    constructor(name){
+        this.name=name;
+    }
+    speak(){
+        console.log(this.name,'makes a sound');
+    }
+}
+class Dog extends Animal{
+    constructor(name,breed){
+   super(name);
+   supper.speak();
+        this.breed=breed;
+    }
+    speak(){
+        console.log(this.name,'barks');
+    }
+}
+const myDog=new Dog("Rex","germanShepherd");
+myDog.speak();
+console.log(myDog.name);
+
+output:
+Rex makes a sound
+Rex barks 
+Rex
